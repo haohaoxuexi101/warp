@@ -1,5 +1,6 @@
 #include <cuda.h>
 #include <stdio.h>
+#include <string.h>
 #include "datadef.h"
 #include "warp_device.cuh"
 #include "check_cuda.h"
