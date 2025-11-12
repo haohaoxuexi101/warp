@@ -221,6 +221,12 @@ cython_add_module(ace ace.pyx)
 target_link_libraries(dissertation ${libs})
 target_link_libraries(benchmarks ${libs})
 
+cuda_add_executable(monte_carlo_cuda_example examples/monte_carlo_cuda_example.cu)
+target_link_libraries(monte_carlo_cuda_example ${CUDA_LIBRARIES} ${CUDA_curand_LIBRARY})
+
+cuda_add_executable(ray_tracing_scene examples/ray_tracing_scene.cu)
+target_link_libraries(ray_tracing_scene ${CUDA_LIBRARIES})
+
 #enable_testing()
 #find_package(GTest REQUIRED)
 #add_subdirectory(test)
